@@ -11,120 +11,30 @@ import GinghamBirthdayCard from './GinghamBirthdayCard';
 /* ====== LETTER TYPEWRITER SUB-COMPONENT ====== */
 function LetterTypewriter() {
   const letterRef = useRef(null);
-  const [started, setStarted] = useState(false);
-  const [currentLine, setCurrentLine] = useState(0);
-  const [currentChar, setCurrentChar] = useState(0);
-  const [displayedLines, setDisplayedLines] = useState([]);
 
   const letterLines = [
     { text: "happy birthday, sayanggg 🤍", style: "greeting" },
-    { text: "", style: "spacer" },
     { text: "selamat bertambah usia untuk seseorang yang sangat berharga. semoga di umur yang baru ini, setiap langkahmu selalu ditemani hal-hal baik, setiap perjalananmu diberikan kemudahan, dan setiap doa yang kamu panjatkan perlahan menemukan jawaban terbaiknya.", style: "body" },
-    { text: "", style: "spacer" },
     { text: "semoga Allah selalu memberikan kesehatan untukmu, umur yang panjang dan penuh keberkahan, hati yang tenang, pikiran yang kuat, serta kehidupan yang dipenuhi kebahagiaan. semoga rezekimu selalu dilancarkan, urusanmu dimudahkan, cita-citamu didekatkan, dan semua impian yang selama ini kamu simpan dalam hati bisa satu per satu menjadi kenyataan.", style: "body" },
-    { text: "", style: "spacer" },
     { text: "semoga kamu selalu dikelilingi orang-orang yang tulus menyayangimu, orang-orang yang menghargai keberadaanmu, dan orang-orang yang selalu mengingatkanmu pada kebaikan. semoga tidak ada langkahmu yang sia-sia, tidak ada perjuanganmu yang berakhir percuma, dan tidak ada air mata yang kamu keluarkan tanpa digantikan dengan kebahagiaan yang jauh lebih besar.", style: "body" },
-    { text: "", style: "spacer" },
     { text: "di umur yang baru ini, semoga kamu semakin dewasa dalam menghadapi kehidupan, semakin kuat ketika menghadapi masalah, dan semakin bijaksana dalam menentukan setiap pilihan. kalau suatu saat semuanya terasa berat, semoga kamu selalu diberikan kekuatan untuk bertahan. kalau sesuatu tidak berjalan sesuai harapan, semoga kamu diberikan hati yang lapang untuk menerima dan keyakinan bahwa akan selalu ada sesuatu yang lebih baik di baliknya.", style: "body" },
-    { text: "", style: "spacer" },
     { text: "jangan pernah merasa bahwa dirimu tidak cukup hanya karena ada sesuatu yang belum berhasil kamu dapatkan. setiap orang punya waktunya masing-masing. teruslah berjalan, sekecil apa pun langkahnya. tidak perlu terburu-buru menjadi seperti orang lain, karena perjalanan setiap manusia memang berbeda. semoga kamu selalu percaya bahwa dirimu berharga, perjuanganmu berarti, dan keberadaanmu memiliki tempat yang istimewa di hati orang-orang yang menyayangimu.", style: "body" },
-    { text: "", style: "spacer" },
     { text: "semoga semua hal baik yang pernah kamu lakukan kembali kepadamu dalam bentuk kebahagiaan yang berkali-kali lipat. semoga setiap kebaikanmu menjadi pahala, setiap kesabaranmu menjadi kekuatan, dan setiap perjuanganmu menjadi jalan menuju kehidupan yang kamu impikan.", style: "body" },
-    { text: "", style: "spacer" },
-    { text: "may your new age be filled with peace, happiness, and beautiful things. 🤍", style: "ps" },
-    { text: "", style: "spacer" },
+    { text: "may your new age be filled with peace, happiness, and beautiful things. 🤍", style: "highlight" },
     { text: "semoga tahun ini menjadi awal dari banyak hal indah. lebih banyak senyum, lebih sedikit kecewa. lebih banyak keberhasilan, lebih sedikit keraguan. lebih banyak ketenangan, lebih sedikit beban. dan semoga apa pun yang terjadi nanti, kamu selalu punya alasan untuk tetap bersyukur dan terus melangkah.", style: "body" },
-    { text: "", style: "spacer" },
     { text: "terima kasih sudah menjadi seseorang yang begitu berarti. semoga kamu selalu bahagia, bukan hanya hari ini, tapi juga di hari-hari setelahnya. semoga setiap ulang tahun yang datang membawa kamu semakin dekat dengan semua impianmu.", style: "body" },
-    { text: "", style: "spacer" },
     { text: "semoga Allah selalu menjaga kamu di mana pun kamu berada, melindungi setiap langkahmu, mengabulkan doa-doamu yang baik, dan memberikan kehidupan yang jauh lebih indah dari apa yang pernah kamu bayangkan.", style: "body" },
-    { text: "", style: "spacer" },
-    { text: "you deserve all the good things in this world.<♡", style: "ps" },
+    { text: "you deserve all the good things in this world.<♡", style: "highlight" },
   ];
-
-  // Trigger typewriter when scrolled into view
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !started) {
-          setStarted(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
-    if (letterRef.current) observer.observe(letterRef.current);
-    return () => observer.disconnect();
-  }, [started]);
-
-  // Typewriter engine
-  useEffect(() => {
-    if (!started) return;
-    if (currentLine >= letterLines.length) return;
-
-    const line = letterLines[currentLine];
-
-    // Spacer lines — skip immediately
-    if (line.style === "spacer") {
-      setDisplayedLines(prev => [...prev, { text: "", style: "spacer" }]);
-      setTimeout(() => {
-        setCurrentLine(prev => prev + 1);
-        setCurrentChar(0);
-      }, 150);
-      return;
-    }
-
-    if (currentChar <= line.text.length) {
-      const timer = setTimeout(() => {
-        const partial = line.text.slice(0, currentChar);
-        
-        setDisplayedLines(prev => {
-          const copy = [...prev];
-          // Update last non-spacer or add new
-          const lastIdx = copy.length - 1;
-          if (lastIdx >= 0 && copy[lastIdx].style === line.style && copy[lastIdx]._lineIdx === currentLine) {
-            copy[lastIdx] = { text: partial, style: line.style, _lineIdx: currentLine };
-          } else {
-            copy.push({ text: partial, style: line.style, _lineIdx: currentLine });
-          }
-          return copy;
-        });
-
-        setCurrentChar(prev => prev + 1);
-      }, 28); // typing speed
-
-      return () => clearTimeout(timer);
-    } else {
-      // Line complete, move to next
-      setTimeout(() => {
-        setCurrentLine(prev => prev + 1);
-        setCurrentChar(0);
-      }, 300);
-    }
-  }, [started, currentLine, currentChar]);
-
-  const isTyping = currentLine < letterLines.length;
-
-  const getLineStyle = (style) => {
-    switch (style) {
-      case 'greeting':
-        return { fontWeight: '600', marginBottom: '4px', fontSize: '1.08rem', color: '#38bdf8', fontFamily: 'var(--font-display)' };
-      case 'ps':
-        return { marginBottom: '0', fontStyle: 'italic', color: '#38bdf8', fontWeight: '500' };
-      case 'spacer':
-        return { height: '10px' };
-      default:
-        return { marginBottom: '4px' };
-    }
-  };
 
   return (
     <div
       ref={letterRef}
       style={{
-        background: 'linear-gradient(165deg, rgba(10, 30, 63, 0.85) 0%, rgba(4, 16, 38, 0.92) 100%)',
+        background: 'linear-gradient(165deg, rgba(10, 30, 63, 0.9) 0%, rgba(4, 16, 38, 0.95) 100%)',
         borderRadius: '28px',
         border: '1.5px solid rgba(96, 165, 250, 0.35)',
-        padding: '28px 20px 24px',
+        padding: '28px 20px 26px',
         position: 'relative',
         boxShadow: '0 18px 40px rgba(0,0,0,0.7), inset 0 0 20px rgba(0, 210, 255, 0.1)',
         marginBottom: '36px',
@@ -136,7 +46,7 @@ function LetterTypewriter() {
       <div style={{ position: 'absolute', bottom: '16px', left: '16px', fontSize: '1.3rem', filter: 'drop-shadow(0 0 6px #60a5fa)' }}>🔹</div>
 
       {/* Section Header */}
-      <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+      <div style={{ textAlign: 'center', marginBottom: '22px' }}>
         <p style={{ fontSize: '0.75rem', letterSpacing: '1.5px', color: '#38bdf8', fontWeight: '600', marginBottom: '4px' }}>
           — FROM MY HEART —
         </p>
@@ -163,46 +73,78 @@ function LetterTypewriter() {
         </div>
       </div>
 
-      {/* Typewriter Letter Content */}
-      <div style={{ fontSize: '0.92rem', lineHeight: '1.65', color: '#e0f2fe', position: 'relative', zIndex: 2, minHeight: '200px' }}>
-        {displayedLines.map((line, i) => (
-          <div key={i} style={getLineStyle(line.style)}>
-            {line.text}
-            {/* Show blinking cursor on the last active line */}
-            {i === displayedLines.length - 1 && isTyping && line.style !== 'spacer' && (
-              <span
+      {/* Letter Content */}
+      <div style={{ fontSize: '0.94rem', lineHeight: '1.8', color: '#e0f2fe', position: 'relative', zIndex: 2 }}>
+        {letterLines.map((line, i) => {
+          if (line.style === 'greeting') {
+            return (
+              <p
+                key={i}
                 style={{
-                  display: 'inline-block',
-                  width: '2px',
-                  height: '14px',
-                  backgroundColor: '#00d2ff',
-                  marginLeft: '3px',
-                  verticalAlign: 'middle',
-                  boxShadow: '0 0 8px #00d2ff',
-                  animation: 'pulseGlow 0.6s infinite alternate',
+                  fontWeight: '700',
+                  fontSize: '1.2rem',
+                  color: '#38bdf8',
+                  fontFamily: 'var(--font-display)',
+                  marginBottom: '16px',
+                  textShadow: '0 0 10px rgba(56,189,248,0.4)',
                 }}
-              />
-            )}
-          </div>
-        ))}
+              >
+                {line.text}
+              </p>
+            );
+          }
+          if (line.style === 'highlight') {
+            return (
+              <div
+                key={i}
+                style={{
+                  margin: '18px 0',
+                  padding: '12px 16px',
+                  background: 'rgba(0, 210, 255, 0.12)',
+                  borderLeft: '3px solid #38bdf8',
+                  borderRadius: '0 14px 14px 0',
+                  fontStyle: 'italic',
+                  color: '#7dd3fc',
+                  fontWeight: '600',
+                  fontSize: '0.96rem',
+                  textShadow: '0 0 8px rgba(0, 210, 255, 0.3)',
+                }}
+              >
+                "{line.text}"
+              </div>
+            );
+          }
+          return (
+            <p
+              key={i}
+              style={{
+                marginBottom: '14px',
+                textAlign: 'left',
+                color: 'rgba(224, 242, 254, 0.92)',
+              }}
+            >
+              {line.text}
+            </p>
+          );
+        })}
 
-        {/* Show signature after typewriter finishes */}
-        {!isTyping && displayedLines.length > 0 && (
-          <div
-            style={{
-              marginTop: '20px',
-              textAlign: 'right',
-              fontWeight: '600',
-              color: '#38bdf8',
-              fontSize: '0.95rem',
-              opacity: 0,
-              animation: 'fadeInUp 0.8s forwards 0.3s',
-            }}
-          >
-            <span style={{ color: '#60a5fa', fontSize: '0.85rem' }}>With all my love,</span><br />
-            <span style={{ fontFamily: 'var(--font-display)', fontSize: '1.2rem', color: '#38bdf8', textShadow: '0 0 10px rgba(56,189,248,0.5)' }}>Rifaldy putra faizal</span>
-          </div>
-        )}
+        {/* Signature */}
+        <div
+          style={{
+            marginTop: '28px',
+            textAlign: 'right',
+            fontWeight: '600',
+            color: '#38bdf8',
+            fontSize: '0.95rem',
+            paddingTop: '14px',
+            borderTop: '1px solid rgba(96, 165, 250, 0.25)',
+          }}
+        >
+          <span style={{ color: '#60a5fa', fontSize: '0.85rem' }}>With all my love,</span><br />
+          <span style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', color: '#38bdf8', textShadow: '0 0 10px rgba(56,189,248,0.6)' }}>
+            Rifaldy putra faizal 🤍
+          </span>
+        </div>
       </div>
     </div>
   );
