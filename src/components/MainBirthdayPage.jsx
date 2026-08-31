@@ -17,15 +17,29 @@ function LetterTypewriter() {
   const [displayedLines, setDisplayedLines] = useState([]);
 
   const letterLines = [
-    { text: "Happy Birthday, Lucyna ❤️", style: "greeting" },
+    { text: "happy birthday, sayanggg 🤍", style: "greeting" },
     { text: "", style: "spacer" },
-    { text: "On this special day, I want to wish you good health, genuine happiness, peace of mind, and the fulfilment of every dream and ambition you pursue.", style: "body" },
+    { text: "selamat bertambah usia untuk seseorang yang sangat berharga. semoga di umur yang baru ini, setiap langkahmu selalu ditemani hal-hal baik, setiap perjalananmu diberikan kemudahan, dan setiap doa yang kamu panjatkan perlahan menemukan jawaban terbaiknya.", style: "body" },
     { text: "", style: "spacer" },
-    { text: "Thank you for being such a wonderful and meaningful part of my life. Your kindness, your laughter, and all the little moments we share mean more to me than I could ever put into words. I may not be able to give you the world right now, but I hope these heartfelt words bring a little smile to your face today.", style: "body" },
+    { text: "semoga Allah selalu memberikan kesehatan untukmu, umur yang panjang dan penuh keberkahan, hati yang tenang, pikiran yang kuat, serta kehidupan yang dipenuhi kebahagiaan. semoga rezekimu selalu dilancarkan, urusanmu dimudahkan, cita-citamu didekatkan, dan semua impian yang selama ini kamu simpan dalam hati bisa satu per satu menjadi kenyataan.", style: "body" },
     { text: "", style: "spacer" },
-    { text: "May our journey continue to grow with warmth, care, and inspiration, always encouraging and supporting each other to become the best versions of ourselves.", style: "body" },
+    { text: "semoga kamu selalu dikelilingi orang-orang yang tulus menyayangimu, orang-orang yang menghargai keberadaanmu, dan orang-orang yang selalu mengingatkanmu pada kebaikan. semoga tidak ada langkahmu yang sia-sia, tidak ada perjuanganmu yang berakhir percuma, dan tidak ada air mata yang kamu keluarkan tanpa digantikan dengan kebahagiaan yang jauh lebih besar.", style: "body" },
     { text: "", style: "spacer" },
-    { text: "Happy birthday, my dearest. I hope the year ahead brings you everything beautiful that you deserve.", style: "ps" },
+    { text: "di umur yang baru ini, semoga kamu semakin dewasa dalam menghadapi kehidupan, semakin kuat ketika menghadapi masalah, dan semakin bijaksana dalam menentukan setiap pilihan. kalau suatu saat semuanya terasa berat, semoga kamu selalu diberikan kekuatan untuk bertahan. kalau sesuatu tidak berjalan sesuai harapan, semoga kamu diberikan hati yang lapang untuk menerima dan keyakinan bahwa akan selalu ada sesuatu yang lebih baik di baliknya.", style: "body" },
+    { text: "", style: "spacer" },
+    { text: "jangan pernah merasa bahwa dirimu tidak cukup hanya karena ada sesuatu yang belum berhasil kamu dapatkan. setiap orang punya waktunya masing-masing. teruslah berjalan, sekecil apa pun langkahnya. tidak perlu terburu-buru menjadi seperti orang lain, karena perjalanan setiap manusia memang berbeda. semoga kamu selalu percaya bahwa dirimu berharga, perjuanganmu berarti, dan keberadaanmu memiliki tempat yang istimewa di hati orang-orang yang menyayangimu.", style: "body" },
+    { text: "", style: "spacer" },
+    { text: "semoga semua hal baik yang pernah kamu lakukan kembali kepadamu dalam bentuk kebahagiaan yang berkali-kali lipat. semoga setiap kebaikanmu menjadi pahala, setiap kesabaranmu menjadi kekuatan, dan setiap perjuanganmu menjadi jalan menuju kehidupan yang kamu impikan.", style: "body" },
+    { text: "", style: "spacer" },
+    { text: "may your new age be filled with peace, happiness, and beautiful things. 🤍", style: "ps" },
+    { text: "", style: "spacer" },
+    { text: "semoga tahun ini menjadi awal dari banyak hal indah. lebih banyak senyum, lebih sedikit kecewa. lebih banyak keberhasilan, lebih sedikit keraguan. lebih banyak ketenangan, lebih sedikit beban. dan semoga apa pun yang terjadi nanti, kamu selalu punya alasan untuk tetap bersyukur dan terus melangkah.", style: "body" },
+    { text: "", style: "spacer" },
+    { text: "terima kasih sudah menjadi seseorang yang begitu berarti. semoga kamu selalu bahagia, bukan hanya hari ini, tapi juga di hari-hari setelahnya. semoga setiap ulang tahun yang datang membawa kamu semakin dekat dengan semua impianmu.", style: "body" },
+    { text: "", style: "spacer" },
+    { text: "semoga Allah selalu menjaga kamu di mana pun kamu berada, melindungi setiap langkahmu, mengabulkan doa-doamu yang baik, dan memberikan kehidupan yang jauh lebih indah dari apa yang pernah kamu bayangkan.", style: "body" },
+    { text: "", style: "spacer" },
+    { text: "you deserve all the good things in this world.<♡", style: "ps" },
   ];
 
   // Trigger typewriter when scrolled into view
@@ -186,7 +200,7 @@ function LetterTypewriter() {
             }}
           >
             <span style={{ color: '#60a5fa', fontSize: '0.85rem' }}>With all my love,</span><br />
-            <span style={{ fontFamily: 'var(--font-display)', fontSize: '1.2rem', color: '#38bdf8', textShadow: '0 0 10px rgba(56,189,248,0.5)' }}>Haikal</span>
+            <span style={{ fontFamily: 'var(--font-display)', fontSize: '1.2rem', color: '#38bdf8', textShadow: '0 0 10px rgba(56,189,248,0.5)' }}>Rifaldy putra faizal</span>
           </div>
         )}
       </div>
@@ -313,8 +327,8 @@ function FarewellSection({ onOpenCake }) {
           fontWeight: '400',
         }}
       >
-        Happy Birthday, Lucyna Majewska ❤️<br /><br />
-        May your year ahead be filled with genuine happiness, good health, and success in everything you do. I’m truly grateful to be able to celebrate you today, even though we’re miles apart. Distance may keep us from celebrating side by side, but it could never make this day feel any less special to me
+        Happy Birthday, Sayanggg 🤍<br /><br />
+        Semoga di umur yang baru ini kamu selalu diberikan kesehatan, keberkahan, dan kebahagiaan yang melimpah. May your year ahead be filled with peace, success, and beautiful things. You deserve all the good things in this world.&lt;♡
       </p>
 
       {/* Center Flower Bucket PNG Ornament */}
@@ -449,7 +463,7 @@ function PersonalMessageCard() {
             fontFamily: 'var(--font-body)',
           }}
         >
-          "I truly cherish your presence and all the thoughtful warmth you bring into my world. Your kindness, intelligence, grace, and courage have such a wonderful way of inspiring me every day. I hope my presence brings as much comfort, happiness, and warmth to your life as yours brings to mine"
+          "Terima kasih sudah menjadi seseorang yang begitu berarti. Semoga kamu selalu bahagia, bukan hanya hari ini, tapi juga di hari-hari setelahnya. You deserve all the good things in this world.&lt;♡"
         </p>
       </div>
     </div>
@@ -550,24 +564,48 @@ export default function MainBirthdayPage() {
     }
   };
 
-  // 3. Polaroid Lightbox Modal State - Photos for Lucyna Majewska
+  // 3. Polaroid Lightbox Modal State - Photo Memories
   const [selectedPhoto, setSelectedPhoto] = useState(null);
   const photoGallery = [
     { 
       id: 1, 
-      title: 'Lucyna Majewska ✨', 
-      date: 'Special Celebration', 
+      title: 'Special Moments ✨', 
+      date: 'Happy Birthday', 
       location: 'Cherished Moment',
-      img: '/lucyna 1.jpeg',
+      img: '/rifa 1.jpeg',
       rotation: '-2deg'
     },
     { 
       id: 2, 
       title: 'Forever in my heart 🌍', 
-      date: 'Miles Apart, But Our Hearts Close 💕', 
-      location: '',
-      img: '/lucyna 2.jpeg',
+      date: 'Blessed & Wonderful Year 💕', 
+      location: '15th Birthday Special',
+      img: '/rifa 2.jpeg',
       rotation: '2.5deg'
+    },
+    { 
+      id: 3, 
+      title: 'Pure Happiness 🌸', 
+      date: 'Special Celebration', 
+      location: 'Sweetest Memories',
+      img: '/rifa 3.jpeg',
+      rotation: '-1.5deg'
+    },
+    { 
+      id: 4, 
+      title: 'Radiant Smile ✨', 
+      date: 'Always In My Heart', 
+      location: 'Precious One',
+      img: '/rifa 4.jpeg',
+      rotation: '2deg'
+    },
+    { 
+      id: 5, 
+      title: 'Beautiful Soul 🤍', 
+      date: 'Best Wishes Always', 
+      location: 'Happy 15th Birthday',
+      img: '/rifa 5.jpeg',
+      rotation: '-2.5deg'
     },
   ];
 
@@ -575,10 +613,10 @@ export default function MainBirthdayPage() {
   const jarRef = useRef(null);
   const [selectedNote, setSelectedNote] = useState(null);
   const jarNotes = [
-    "Every conversation with you leaves a lasting warmth that brightens my entire day. Thank you for being such an amazing person. 💙",
-    "I admire your intelligence, your gentle strength, and the grace with which you carry yourself. 🤍",
-    "You make the world feel softer, kinder, and so much more beautiful just by being in it. ✨",
-    "Thank you for being someone truly unforgettable. Wishing you all the love and happiness in the world. 🌸"
+    "Semoga di umur yang baru ini, setiap langkahmu selalu ditemani hal-hal baik dan setiap doa perlahan menemukan jawaban terbaiknya. 🤍",
+    "Jangan pernah merasa bahwa dirimu tidak cukup. Kamu berharga, perjuanganmu berarti, dan keberadaanmu sangat istimewa. ✨",
+    "Semoga Allah selalu menjaga kamu di mana pun berada, melindungi setiap langkahmu, dan mengabulkan doa-doa baikmu. 💙",
+    "May your new age be filled with peace, happiness, and beautiful things. You deserve all the good things in this world.<♡ 🌸"
   ];
 
   // 5. Final Birthday Cake Modal State
@@ -918,7 +956,7 @@ export default function MainBirthdayPage() {
           <span>🤍</span>
         </div>
 
-        {/* Title: Happy Birthday, My Dearest 🤍 Lucyna Majewska */}
+        {/* Title: Happy Birthday, Sayanggg 🤍 */}
         <div
           style={{
             fontFamily: 'var(--font-display)',
@@ -954,19 +992,19 @@ export default function MainBirthdayPage() {
               letterSpacing: '0.5px',
             }}
           >
-            Moje Kochanie ❤️
+            Sayanggg 🤍
           </div>
           <div
             ref={agaaRef}
             style={{
-              fontSize: '2.8rem',
+              fontSize: '2.4rem',
               fontWeight: '600',
               color: '#ffffff',
               letterSpacing: '1px',
               textShadow: '0 0 20px rgba(255, 255, 255, 0.6)',
             }}
           >
-            Lucyna Majewska
+            Special 15th Birthday
           </div>
         </div>
 
@@ -1614,7 +1652,7 @@ export default function MainBirthdayPage() {
                 zIndex: 5,
               }}
             >
-              📜 A SPECIAL NOTE FOR LUCYNA MAJEWSKA 💙
+              📜 A SPECIAL NOTE FOR YOU 💙
             </div>
 
             <p style={{ marginTop: '4px', fontFamily: 'var(--font-body)' }}>
@@ -1746,10 +1784,10 @@ export default function MainBirthdayPage() {
           >
             <div style={{ fontSize: '3rem', marginBottom: '10px' }}>💖</div>
             <h3 className="neon-text" style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', marginBottom: '8px' }}>
-              Happy Birthday, Lucyna!
+              Happy Birthday, Sayanggg!
             </h3>
             <p style={{ fontSize: '0.9rem', color: '#e0f2fe', marginBottom: '20px' }}>
-              Wishing the wonderful Lucyna Majewska a magical year ahead 💗
+              Wishing you a magical, blessed, and wonderful year ahead 💗
             </p>
 
             <button
